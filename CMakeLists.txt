@@ -8,46 +8,47 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add executable
-add_executable(Algorithms main.cpp)
+add_executable(Algorithms main.cpp "templating/templating.h" "utils.h" "playground.h")
 
 # Include directories
 target_include_directories(Algorithms PUBLIC "${PROJECT_BINARY_DIR}")
 
 # Add each .h file that is part of the project
 set(HEADER_FILES
-    adjacencylistmastrix.h
+    "algorithms/adjacencylistmastrix.h"
     main.h
-    astart.h
-    avltree.h
-    bellman-ford.h
-    bfs.h
-    binsearch.h
-    bintreetrav.h
-    boyermoore.h
-    bubblesort.h
-    coinchange.h
-    dfs.h
-    dijkstra.h
-    editdistance.h
-    fibonacci.h
-    floydwarshall.h
-    heapsort.h
-    insertionsort.h
-    kadane.h
-    knapsack.h
-    kruskal.h
-    longestcommonsubsequence.h
-    maxminheap.h
-    mergesort.h
-    prim.h
-    quicksort.h
-    radixsort.h
-    reblacktree.h
-    selectionsort.h
-    topologicalsort.h
-    zalgorithm.h
-    algo_utils.h
-)
+    "algorithms/astart.h"
+    "algorithms/avltree.h"
+    "algorithms/bellman-ford.h"
+    "algorithms/bfs.h"
+    "algorithms/binsearch.h"
+    "algorithms/bintreetrav.h"
+    "algorithms/boyermoore.h"
+    "algorithms/bubblesort.h"
+    "algorithms/coinchange.h"
+    "algorithms/dfs.h"
+    "algorithms/dijkstra.h"
+    "algorithms/editdistance.h"
+    "algorithms/fibonacci.h"
+    "algorithms/floydwarshall.h"
+    "algorithms/heapsort.h"
+    "algorithms/insertionsort.h"
+    "algorithms/kadane.h"
+    "algorithms/knapsack.h"
+    "algorithms/kruskal.h"
+    "algorithms/longestcommonsubsequence.h"
+    "algorithms/maxminheap.h"
+    "algorithms/mergesort.h"
+    "algorithms/prim.h"
+    "algorithms/quicksort.h"
+    "algorithms/radixsort.h"
+    "algorithms/reblacktree.h"
+    "algorithms/selectionsort.h"
+    "algorithms/topologicalsort.h"
+    "algorithms/zalgorithm.h"
+    "algorithms/algo_utils.h"
+    "templating/templating.h"
+    "playground.h")
 
 # Include the header files
 target_sources(Algorithms PRIVATE ${HEADER_FILES})
