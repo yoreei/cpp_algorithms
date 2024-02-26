@@ -15,6 +15,7 @@ target_include_directories(Algorithms PUBLIC "${PROJECT_BINARY_DIR}")
 
 # Add each .h file that is part of the project
 set(HEADER_FILES
+    "challenges/thinkcell.h"
     "algorithms/adjacencylistmastrix.h"
     main.h
     "algorithms/astart.h"
@@ -48,7 +49,7 @@ set(HEADER_FILES
     "algorithms/zalgorithm.h"
     "algorithms/algo_utils.h"
     "templating/templating.h"
-    "playground.h")
+    "playground.h" "stl/thinkcell.h" "syntax/syntax.h" "textprocess/regex.h")
 
 # Include the header files
 target_sources(Algorithms PRIVATE ${HEADER_FILES})

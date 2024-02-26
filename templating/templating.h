@@ -34,7 +34,8 @@ namespace auto_templating{
     // both of them are inline functions by default (because of templating)
 } // namespace auto_templating
 
-namespace non_type_template_parameters{
+namespace NTTP{
+    // Non-type template parameters
     template <class _Ty, size_t _Size>
     class array {
     public:

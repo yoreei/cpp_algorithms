@@ -6,6 +6,9 @@
 #ifndef ALL_INCLUDES_H
 #define ALL_INCLUDES_H
 #include "utils.h"
+#include "textprocess/regex.h"
+#include "challenges/thinkcell.h"
+#include "stl/thinkcell.h"
 #include "playground.h"
 #include "templating/templating.h"
 #include "algorithms/adjacencylistmastrix.h"
@@ -45,39 +48,7 @@ using namespace std;
 
 int main()
 {
-	non_type_template_parameters::main();
-	// Function Invocations
-	//templating();
-	//adjacencylistmatrix();
-	//astart();
-	//avltree();
-	//bellman_ford();
-	//bfs();
-	//binsearch();
-	//bintreetrav();
-	//boyermoore();
-	//bubblesort();
-	//coinchange();
-	//dfs();
-	//dijkstra();
-	//editdistance();
-	//fibonacci();
-	//floydwarshall();
-	//heapsort();
-	//insertionsort();
-	//kadane();
-	//knapsack();
-	//kruskal();
-	//longestcommonsubsequence();
-	//maxminheap();
-	//mergesort();
-	//prim();
-	//quicksort();
-	//radixsort();
-	//reblacktree();
-	//selectionsort();
-	//topologicalsort();
-	//zalgorithm();
-
+	tp_regex::main();
+	//non_type_template_parameters::main();
 	return 0;
 }
