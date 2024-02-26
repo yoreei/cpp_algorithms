@@ -6,7 +6,9 @@
 #ifndef ALL_INCLUDES_H
 #define ALL_INCLUDES_H
 #include "utils.h"
+#include "idioms/typeerasure.h"
 #include "textprocess/regex.h"
+#include "textprocess/enum2string.h"
 #include "challenges/thinkcell.h"
 #include "stl/thinkcell.h"
 #include "playground.h"
@@ -48,7 +50,7 @@ using namespace std;
 
 int main()
 {
-	tp_regex::main();
+	type_erasure::main();
 	//non_type_template_parameters::main();
 	return 0;
 }
