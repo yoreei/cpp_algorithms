@@ -5,6 +5,7 @@
 
 #ifndef ALL_INCLUDES_H
 #define ALL_INCLUDES_H
+#include "stl/function.h"
 #include "utils.h"
 #include "idioms/typeerasure.h"
 #include "textprocess/regex.h"
@@ -50,7 +51,7 @@ using namespace std;
 
 int main()
 {
-	type_erasure::main();
+	stl_function::main();
 	//non_type_template_parameters::main();
 	return 0;
 }

@@ -50,7 +50,7 @@ set(HEADER_FILES
     "algorithms/zalgorithm.h"
     "algorithms/algo_utils.h"
     "templating/templating.h"
-    "playground.h" "stl/thinkcell.h" "syntax/syntax.h" "textprocess/regex.h" "textprocess/enum2string.h")
+    "playground.h" "stl/thinkcell.h" "syntax/syntax.h" "textprocess/regex.h" "textprocess/enum2string.h" "stl/function.h")
 
 # Include the header files
 target_sources(Algorithms PRIVATE ${HEADER_FILES})
