@@ -10,7 +10,7 @@
 #include "idioms/typeerasure.h"
 #include "textprocess/regex.h"
 #include "textprocess/enum2string.h"
-#include "challenges/thinkcell.h"
+#include "challenges/challenge.h"
 #include "stl/thinkcell.h"
 #include "playground.h"
 #include "templating/templating.h"
@@ -51,7 +51,7 @@ using namespace std;
 
 int main()
 {
-	stl_function::main();
+	challenges_challenge::main();
 	//non_type_template_parameters::main();
 	return 0;
 }
