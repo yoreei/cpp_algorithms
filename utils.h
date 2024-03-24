@@ -22,3 +22,7 @@ inline void log(const std::string_view message,
     std::clog << location.line() << ':'
               << message << '\n';
 }
+
+inline void except(){
+    throw std::runtime_error(std::string("ho "));
+}

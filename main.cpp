@@ -5,6 +5,9 @@
 
 #ifndef ALL_INCLUDES_H
 #define ALL_INCLUDES_H
+#include "memory/new.h"
+#include "syntax/legacy.h"
+#include "syntax/literals.h"
 #include "stl/function.h"
 #include "utils.h"
 #include "idioms/typeerasure.h"
@@ -51,7 +54,6 @@ using namespace std;
 
 int main()
 {
-	challenges_challenge::main();
-	//non_type_template_parameters::main();
+	memory_new::start();
 	return 0;
 }

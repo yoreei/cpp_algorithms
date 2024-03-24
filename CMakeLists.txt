@@ -15,6 +15,9 @@ target_include_directories(Algorithms PUBLIC "${PROJECT_BINARY_DIR}")
 
 # Add each .h file that is part of the project
 set(HEADER_FILES
+    "memory/new.h"
+    "syntax/legacy.h"
+    "syntax/literals.h"
     "idioms/typeerasure.h"
     "challenges/challenge.h"
     "algorithms/adjacencylistmastrix.h"
