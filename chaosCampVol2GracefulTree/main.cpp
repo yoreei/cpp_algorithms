@@ -29,52 +29,68 @@ const char *sample2 =
 const char *sample3 =
   "2 "
   "2 0 "
-  "1 2 0 0 "
+  "1 2 "
   "0 0 0";
+
+const char *sample4 =
+  "3 "
+  "2 0 1 "
+  "1 2 1 "
+  "0 0 2 0 "
+  "0 0";
+
+const char *sample5 =
+  "1 "
+  "2 "
+  "2 1 "
+  "3 2 1 "
+  "0 0 0 0 0 0";
 
 struct Node {
 	int value = 0;
-	std::vector<std::unique_ptr<Node>> children = {};
+	uint8_t numChildren = 0;
 };
-
-bool is1to9(char c) {
-	return (c >= '1' && c <= '9');
-}
 
 int main(int argc, char **argv) {
 
 	std::cout << "Hello World2" << std::endl;
-	const char *input = sample1;
+	const char *input = sample5;
 	size_t len = std::strlen(input);
 	if(len % 2 == 0) {
 		std::cerr << "wrong input size\n";
 		exit(-1);
 	}
 	size_t numNodes = (len + 1) / 2;
-	Node* mem = (Node*)_mm_malloc(sizeof(Node) * numNodes, 64); ///> align with cache line size
+	void* mem = _mm_malloc(sizeof(Node) * numNodes, 64); ///> align with cache line size
 	if (!mem) exit(-1);
 	std::memset(mem, 0, sizeof(Node) * numNodes);
+	Node* nodes = (Node*)mem;
 
-
-	std::queue<Node*> nodeQueue {}; ///> a queue of nodes to be populated with children
-	nodeQueue.push(currentNode);
-    bool allNulls = false;
-    int cur = 0; ///> cursor
-	while(allNulls) {
-		allNulls = true;
-		if(input[cur] == '\n') { ++cur; continue; }
-		else if(is1to9(input[cur])) {
-			int numChildren = input[cur] - '0';
-			currentNode = nodeQueue.front();
-			currentNode->children.resize(numChildren);
-			for(int i = 0; i < numChildren; ++i) {
-				currentNode->children[i] = std::make_unique<Node>();
-			}
-		}
-		else if(input[cur] == '0') {++cur; nodeQueue.pop(); continue;}
-		else { std::cerr << "wrong input\n"; exit(-1);}
+	for(size_t i = 0; i < numNodes; ++i) {
+		size_t inputCur = i * 2;
+		nodes[i].numChildren = input[inputCur] - '0';
 	}
-	Node root = {};
+
+	int nodesInLevel = 1;
+	int levelCur = 0;
+	int nextNodesInLevel = 0;
+	for(size_t i = 0; i < numNodes; ++i) {
+		if(levelCur >= nodesInLevel) {
+			levelCur = 0;
+			nodesInLevel = nextNodesInLevel;
+			nextNodesInLevel = 0;
+			std::cout << "\n";
+		}
+
+		std::cout << (int)nodes[i].numChildren << " ";
+		nextNodesInLevel += nodes[i].numChildren;
+		++levelCur;
+
+
+	}
+	std::cout << std::endl << std::flush;
+
+
 
 	_mm_free(mem);
 	return 0;
